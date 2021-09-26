@@ -46,8 +46,6 @@ fun CategoryRow(category: Category, selectCategory: (name: String) -> Unit) {
             .padding(4.dp),
         elevation = 2.dp
     ) {
-
-
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
@@ -71,6 +69,5 @@ fun CategoryImage(category: Category) {
         painter = rememberImagePainter(category.poster),
         contentDescription = null,
         modifier = Modifier.size(128.dp),
-
         )
 }

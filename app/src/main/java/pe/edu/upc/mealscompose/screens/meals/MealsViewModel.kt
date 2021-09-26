@@ -1,12 +1,8 @@
 package pe.edu.upc.mealscompose.screens.meals
 
-import android.util.Log
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-
 import pe.edu.upc.mealscompose.data.model.Meal
 import pe.edu.upc.mealscompose.data.repository.MealRepository
 import javax.inject.Inject
@@ -19,11 +15,19 @@ class MealsViewModel @Inject constructor(private val mealRepository: MealReposit
 
     fun fetchMealsByCategory(name: String) {
         viewModelScope.launch {
-            val response = mealRepository.fetchMealsByCategory(name)
-            if (response.isSuccessful && response.body() != null) {
-                _meals.postValue(response.body()!!.meals)
-            }
+            _meals.postValue(mealRepository.fetchMealsByCategory(name))
+        }
+    }
 
+    fun insert(meal: Meal) {
+        viewModelScope.launch {
+            mealRepository.insert(meal)
+        }
+    }
+
+    fun delete(meal: Meal) {
+        viewModelScope.launch {
+            mealRepository.delete(meal)
         }
     }
 }

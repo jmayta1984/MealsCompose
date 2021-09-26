@@ -5,6 +5,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.scopes.ViewModelScoped
+import pe.edu.upc.mealscompose.data.local.MealDao
 import pe.edu.upc.mealscompose.data.remote.CategoryService
 import pe.edu.upc.mealscompose.data.remote.MealService
 import pe.edu.upc.mealscompose.data.repository.CategoryRepository
@@ -17,9 +18,10 @@ object RepositoryModule {
     @Provides
     @ViewModelScoped
     fun provideMealRepository(
-        mealService: MealService
+        mealService: MealService,
+        mealDao: MealDao
     ): MealRepository {
-        return MealRepository(mealService)
+        return MealRepository(mealService, mealDao)
     }
 
     @Provides

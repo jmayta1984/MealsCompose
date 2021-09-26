@@ -18,9 +18,7 @@ class CategoriesViewModel @Inject constructor(private val categoryRepository: Ca
 
     fun fetchCategories() {
         viewModelScope.launch {
-            val response = categoryRepository.fetchCategories()
-            if (response.isSuccessful && response.body() != null)
-                _categories.postValue(response.body()!!.categories)
+            _categories.postValue(categoryRepository.fetchCategories())
         }
     }
 }
