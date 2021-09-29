@@ -4,7 +4,7 @@ import androidx.lifecycle.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import pe.edu.upc.mealscompose.data.model.Meal
-import pe.edu.upc.mealscompose.data.repository.MealRepository
+import pe.edu.upc.mealscompose.repository.MealRepository
 import javax.inject.Inject
 
 @HiltViewModel

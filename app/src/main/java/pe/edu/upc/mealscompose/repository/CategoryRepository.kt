@@ -1,4 +1,4 @@
-package pe.edu.upc.mealscompose.data.repository
+package pe.edu.upc.mealscompose.repository
 
 import pe.edu.upc.mealscompose.data.model.Category
 import pe.edu.upc.mealscompose.data.remote.CategoryService

@@ -6,7 +6,7 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import pe.edu.upc.mealscompose.data.model.Category
-import pe.edu.upc.mealscompose.data.repository.CategoryRepository
+import pe.edu.upc.mealscompose.repository.CategoryRepository
 import javax.inject.Inject
 
 @HiltViewModel

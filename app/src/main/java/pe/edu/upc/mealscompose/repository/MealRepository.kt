@@ -1,4 +1,4 @@
-package pe.edu.upc.mealscompose.data.repository
+package pe.edu.upc.mealscompose.repository
 
 import pe.edu.upc.mealscompose.data.local.MealDao
 import pe.edu.upc.mealscompose.data.model.Meal
@@ -11,6 +11,8 @@ class MealRepository @Inject constructor(
 ) {
 
     suspend fun fetchMealsByCategory(name: String): List<Meal> {
+
+        val fetchMealsByCategory = mealService.fetchMealsByCategory(name)
         val response = mealService.fetchMealsByCategory(name)
         if (response.isSuccessful && response.body() != null) {
             for (item in response.body()!!.meals) {

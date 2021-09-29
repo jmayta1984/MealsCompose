@@ -8,8 +8,8 @@ import dagger.hilt.android.scopes.ViewModelScoped
 import pe.edu.upc.mealscompose.data.local.MealDao
 import pe.edu.upc.mealscompose.data.remote.CategoryService
 import pe.edu.upc.mealscompose.data.remote.MealService
-import pe.edu.upc.mealscompose.data.repository.CategoryRepository
-import pe.edu.upc.mealscompose.data.repository.MealRepository
+import pe.edu.upc.mealscompose.repository.CategoryRepository
+import pe.edu.upc.mealscompose.repository.MealRepository
 
 @Module
 @InstallIn(ViewModelComponent::class)
